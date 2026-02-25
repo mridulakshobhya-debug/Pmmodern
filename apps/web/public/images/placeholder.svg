@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B2D23"/>
+      <stop offset="1" stop-color="#1A4D3E"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" rx="24" fill="url(#bg)"/>
+  <circle cx="140" cy="100" r="90" fill="#D6B164" fill-opacity="0.22"/>
+  <circle cx="540" cy="380" r="120" fill="#10B981" fill-opacity="0.24"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#E8FFF5" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">
+    PMModern Product
+  </text>
+</svg>

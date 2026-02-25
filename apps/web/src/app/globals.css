@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f8fffb;
+  --surface: rgba(255, 255, 255, 0.72);
+  --text: #092019;
+  --muted: #4f635b;
+  --border: rgba(9, 32, 25, 0.1);
+  --accent: #10b981;
+  --accent-soft: #d6b164;
+}
+
+.dark {
+  --bg: #04110d;
+  --surface: rgba(7, 31, 24, 0.72);
+  --text: #e8fff5;
+  --muted: #9ab4aa;
+  --border: rgba(194, 255, 227, 0.15);
+  --accent: #34d399;
+  --accent-soft: #e3c87f;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Satoshi", "Segoe UI", sans-serif;
+}
+
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px -12px rgba(6, 22, 16, 0.22);
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.magnetic {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.magnetic:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 18px 36px -14px rgba(18, 170, 124, 0.45);
+}

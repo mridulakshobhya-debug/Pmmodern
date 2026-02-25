@@ -1,0 +1,33 @@
+{
+  "name": "pmmodern",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "desktop"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:web dev:api",
+    "dev:web": "npm run dev -w @pmmodern/web",
+    "dev:api": "npm run dev -w @pmmodern/api",
+    "build": "npm-run-all build:shared build:web build:api",
+    "build:shared": "npm run build -w @pmmodern/shared-types",
+    "build:web": "npm run build -w @pmmodern/web",
+    "build:api": "npm run build -w @pmmodern/api",
+    "lint": "npm-run-all lint:web lint:api",
+    "lint:web": "npm run lint -w @pmmodern/web",
+    "lint:api": "npm run lint -w @pmmodern/api",
+    "typecheck": "npm-run-all typecheck:shared typecheck:web typecheck:api",
+    "typecheck:shared": "npm run typecheck -w @pmmodern/shared-types",
+    "typecheck:web": "npm run typecheck -w @pmmodern/web",
+    "typecheck:api": "npm run typecheck -w @pmmodern/api",
+    "desktop:run": "npm run start -w @pmmodern/desktop",
+    "desktop:runtime": "npm run prepare:runtime -w @pmmodern/desktop",
+    "desktop:pack": "npm run dist:win -w @pmmodern/desktop",
+    "desktop:exe": "npm-run-all build:shared build:web desktop:runtime desktop:pack"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

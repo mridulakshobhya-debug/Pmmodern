@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build outputs
+.next/
+dist/
+coverage/
+out/
+desktop/runtime/
+desktop/release/
+
+# env files
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# misc
+.DS_Store
+Thumbs.db
