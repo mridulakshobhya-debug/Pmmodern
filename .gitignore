@@ -18,7 +18,6 @@ next.config.mjs
 tailwind.config.ts
 .vercelignore
 vercel.json
-Images/
 
 # Build outputs
 .next/
