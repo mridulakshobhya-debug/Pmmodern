@@ -1,25 +1,42 @@
-# dependencies
+# Directories
+apps/
+desktop/
+packages/
+Pmmodern/
+scripts/
 node_modules/
+.vscode/
 
-# build outputs
+# Legacy files
+*.bat
+Logo.png
+package.json
+package-lock.json
+tsconfig.json
+postcss.config.mjs
+next.config.mjs
+tailwind.config.ts
+.vercelignore
+vercel.json
+Images/
+
+# Build outputs
 .next/
 dist/
 coverage/
 out/
-desktop/runtime/
-desktop/release/
 
-# env files
+# Env files
 .env
 .env.*
 !.env.example
 
-# logs
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# misc
+# OS
 .DS_Store
 Thumbs.db
