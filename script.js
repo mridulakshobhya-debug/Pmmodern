@@ -293,4 +293,23 @@ function scrollToProducts() {
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     cart.updateUI();
+    
+    // Add scroll animations
+    observeElements();
 });
+
+// Intersection Observer for scroll animations
+function observeElements() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.product-card, .category-card, .contact, .footer').forEach(el => {
+        observer.observe(el);
+    });
+}
