@@ -1033,7 +1033,40 @@ body {
 @media (max-width: 640px) {
     .cart-drawer {
         width: 100%;
-        right: -100%;
+        max-height: 100vh;
+        right: 0;
+        border-radius: 1rem 1rem 0 0;
+    }
+    
+    .cart-drawer.open {
+        transform: translateX(0);
+    }
+    
+    .cart-content {
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+    
+    .cart-header {
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--bg);
+    }
+    
+    .cart-items {
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+    
+    .cart-footer {
+        padding: 1rem;
+        border-top: 2px solid var(--border);
+        background: var(--bg);
+        position: sticky;
+        bottom: 0;
     }
 
     .hero h1 {
@@ -1352,4 +1385,73 @@ body {
 .confirmation-detail-value {
     font-weight: 600;
     color: var(--text);
+}
+
+/* Mobile Responsiveness for Checkout & Confirmation */
+@media (max-width: 768px) {
+    .checkout-screen.open {
+        padding: 1rem 0;
+    }
+
+    .checkout-container {
+        width: 95%;
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .checkout-content {
+        max-height: 60vh;
+        padding: 1rem;
+    }
+
+    .checkout-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .checkout-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 0.75rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+        font-size: 16px;
+    }
+
+    .checkout-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .checkout-footer .btn {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .confirmation-container {
+        width: 95%;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .confirmation-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .confirmation-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .confirmation-details {
+        margin: 1.5rem 0;
+        text-align: left;
+        font-size: 0.9rem;
+    }
 }
