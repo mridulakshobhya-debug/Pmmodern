@@ -1,23 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "apps/web/package.json",
-      "use": "@vercel/next@latest"
-    },
-    {
-      "src": "apps/api/package.json",
-      "use": "@vercel/node@latest"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "apps/api/src/server.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "apps/web"
-    }
-  ]
+  "buildCommand": "npm run build:web",
+  "outputDirectory": "apps/web/.next",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@next_public_api_url"
+  }
 }
