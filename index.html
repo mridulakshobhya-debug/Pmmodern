@@ -37,37 +37,39 @@
     <!-- Groceries Category -->
     <section class="categories">
         <div class="container">
-            <h2>Groceries Category</h2>
-            <div class="category-grid">
-                <div class="category-card">
+            <h2>Groceries Category
+                <a href="#" onclick="filterByCategory(null); event.preventDefault();" style="font-size: 0.6em; color: var(--primary); margin-left: 1rem; text-decoration: underline;">View All</a>
+            </h2>
+            <div class="category-grid" id="categoryGrid">
+                <div class="category-card" data-category="Rice" onclick="filterByCategory('Rice')">
                     <img src="images/Rice.jpg" alt="Rice">
                     <span>Rice</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Basmati" onclick="filterByCategory('Basmati')">
                     <img src="images/basmathi.jpg" alt="Basmati">
                     <span>Basmati</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Sona Masoori" onclick="filterByCategory('Sona Masoori')">
                     <img src="images/sona masoori.jpg" alt="Sona Masoori">
                     <span>Sona Masoori</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Brown Rice" onclick="filterByCategory('Brown Rice')">
                     <img src="images/brownrice.jpg" alt="Brown Rice">
                     <span>Brown Rice</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Pulses" onclick="filterByCategory('Pulses')">
                     <img src="images/Pulses.jpg" alt="Pulses">
                     <span>Pulses</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Pulses" onclick="filterByCategory('Pulses')">
                     <img src="images/lentils.jpg" alt="Lentils">
                     <span>Lentils</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Flour" onclick="filterByCategory('Flour')">
                     <img src="images/Flour and grains.jpg" alt="Flour">
                     <span>Flour</span>
                 </div>
-                <div class="category-card">
+                <div class="category-card" data-category="Spices" onclick="filterByCategory('Spices')">
                     <img src="images/Spices.jpg" alt="Spices">
                     <span>Spices</span>
                 </div>

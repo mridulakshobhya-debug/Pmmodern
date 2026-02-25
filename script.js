@@ -90,6 +90,29 @@ const products = [
     }
 ];
 
+let currentFilter = null;
+
+// Filter by category
+function filterByCategory(category) {
+    currentFilter = category;
+    
+    // Update active state on category cards
+    document.querySelectorAll('.category-card').forEach(card => {
+        if (category && card.dataset.category === category) {
+            card.classList.add('active');
+        } else {
+            card.classList.remove('active');
+        }
+    });
+    
+    renderProducts(category);
+    
+    // Scroll to products
+    setTimeout(() => {
+        document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+}
+
 // Cart Management
 class Cart {
     constructor() {
@@ -256,9 +279,28 @@ document.addEventListener('click', (e) => {
 });
 
 // Render Products
-function renderProducts() {
+function renderProducts(filterCategory = null) {
     const productsGrid = document.getElementById('productsGrid');
-    productsGrid.innerHTML = products.map(product => `
+    
+    // Filter products if a category is specified
+    let filteredProducts = products;
+    let sectionTitle = "New Arrivals";
+    
+    if (filterCategory) {
+        filteredProducts = products.filter(p => p.category === filterCategory);
+        sectionTitle = `${filterCategory} Products`;
+    }
+    
+    // Update section title
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+        const heading = productsSection.querySelector('h2');
+        if (heading) {
+            heading.textContent = sectionTitle;
+        }
+    }
+    
+    productsGrid.innerHTML = filteredProducts.map(product => `
         <div class="product-card">
             <img src="${product.image}" alt="${product.title}" class="product-image">
             <div class="product-info">
