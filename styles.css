@@ -601,9 +601,9 @@ body {
 .footer {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: white;
-    padding: 4rem 0 2rem;
+    padding: 2.5rem 0 1.5rem;
     animation: fadeIn 1s ease-out;
-    margin-top: 4rem;
+    margin-top: 3rem;
     border-top: 3px solid var(--primary);
 }
 
@@ -723,15 +723,17 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    padding: 8px;
     background: rgba(16, 185, 129, 0.2);
     border: 2px solid var(--primary);
     border-radius: 50%;
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: all 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .social-icon:hover {
