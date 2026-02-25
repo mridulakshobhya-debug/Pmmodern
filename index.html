@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Modern - Premium Groceries Delivered Fresh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="logo.svg" alt="PM Modern Logo" class="logo-img">
+                    <span class="logo-text">PMMODERN</span>
+                </a>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+                    <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Groceries Delivered Fresh</h1>
+            <p>Curated essentials, faster doorstep delivery, and a futuristic shopping experience.</p>
+            <button class="btn btn-primary" onclick="scrollToProducts()">Explore Groceries</button>
+        </div>
+    </section>
+
+    <!-- Groceries Category -->
+    <section class="categories">
+        <div class="container">
+            <h2>Groceries Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="images/Rice.jpg" alt="Rice">
+                    <span>Rice</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/basmathi.jpg" alt="Basmati">
+                    <span>Basmati</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/sona masoori.jpg" alt="Sona Masoori">
+                    <span>Sona Masoori</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/brownrice.jpg" alt="Brown Rice">
+                    <span>Brown Rice</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/Pulses.jpg" alt="Pulses">
+                    <span>Pulses</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/lentils.jpg" alt="Lentils">
+                    <span>Lentils</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/Flour and grains.jpg" alt="Flour">
+                    <span>Flour</span>
+                </div>
+                <div class="category-card">
+                    <img src="images/Spices.jpg" alt="Spices">
+                    <span>Spices</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>New Arrivals</h2>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>PM MODERN GENERAL TRADING FZ-LLC</h3>
+                    <p>FOB50736</p>
+                    <p>Compass Building, Al Shohada Road</p>
+                    <p>Al Hamra Industrial Zone-FZ</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:support@pmmodern.com" class="btn btn-secondary">Email Us</a>
+                    <a href="tel:+971" class="btn btn-secondary">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="logo.svg" alt="PM Modern Logo" class="footer-logo">
+                    <h3>PMMODERN</h3>
+                    <p>Premium groceries delivered fresh across UAE.</p>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PM Modern. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cartTotal">AED 0.00</span>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
