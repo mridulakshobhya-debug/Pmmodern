@@ -105,7 +105,8 @@ function filterByCategory(category) {
         }
     });
     
-    renderProducts(category);
+    // Always show all products (no filtering)
+    renderProducts();
     
     // Scroll to products
     setTimeout(() => {
@@ -279,17 +280,11 @@ document.addEventListener('click', (e) => {
 });
 
 // Render Products
-function renderProducts(filterCategory = null) {
+function renderProducts() {
     const productsGrid = document.getElementById('productsGrid');
     
-    // Filter products if a category is specified
-    let filteredProducts = products;
-    let sectionTitle = "New Arrivals";
-    
-    if (filterCategory) {
-        filteredProducts = products.filter(p => p.category === filterCategory);
-        sectionTitle = `${filterCategory} Products`;
-    }
+    // Always show all products
+    const sectionTitle = "New Arrivals";
     
     // Update section title
     const productsSection = document.getElementById('products');
@@ -300,7 +295,7 @@ function renderProducts(filterCategory = null) {
         }
     }
     
-    productsGrid.innerHTML = filteredProducts.map(product => `
+    productsGrid.innerHTML = products.map(product => `
         <div class="product-card">
             <img src="${product.image}" alt="${product.title}" class="product-image">
             <div class="product-info">
