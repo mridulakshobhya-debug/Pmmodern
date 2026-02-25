@@ -10,14 +10,11 @@ node_modules/
 # Legacy files
 *.bat
 Logo.png
-package.json
-package-lock.json
 tsconfig.json
 postcss.config.mjs
 next.config.mjs
 tailwind.config.ts
 .vercelignore
-vercel.json
 
 # Build outputs
 .next/

@@ -1,0 +1,10 @@
+{
+  "name": "pmmodern",
+  "version": "1.0.0",
+  "description": "Premium Groceries Delivered Fresh - E-commerce Platform",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "test": "echo \"No tests specified\""
+  }
+}
