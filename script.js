@@ -335,6 +335,140 @@ document.addEventListener('DOMContentLoaded', () => {
     observeElements();
 });
 
+// Checkout Functions
+function openCheckout() {
+    if (cart.items.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    
+    // Close cart drawer
+    closeCartDrawer();
+    
+    // Update checkout items
+    renderCheckoutItems();
+    
+    // Open checkout screen
+    const checkoutScreen = document.getElementById('checkoutScreen');
+    if (checkoutScreen) {
+        checkoutScreen.classList.add('open');
+    }
+}
+
+function closeCheckout() {
+    const checkoutScreen = document.getElementById('checkoutScreen');
+    if (checkoutScreen) {
+        checkoutScreen.classList.remove('open');
+    }
+}
+
+function renderCheckoutItems() {
+    const itemsContainer = document.getElementById('checkoutItems');
+    const subtotalEl = document.getElementById('checkoutSubtotal');
+    const totalEl = document.getElementById('checkoutTotal');
+    
+    let subtotal = cart.getTotal();
+    let deliveryFee = 5.00;
+    let total = subtotal + deliveryFee;
+    
+    itemsContainer.innerHTML = cart.items.map(item => `
+        <div class="checkout-item">
+            <div>
+                <div class="checkout-item-title">${item.title}</div>
+                <div class="checkout-item-qty">Qty: ${item.quantity} × AED ${item.price.toFixed(2)}</div>
+            </div>
+            <div style="font-weight: 600;">AED ${(item.price * item.quantity).toFixed(2)}</div>
+        </div>
+    `).join('');
+    
+    subtotalEl.textContent = `AED ${subtotal.toFixed(2)}`;
+    totalEl.textContent = `AED ${total.toFixed(2)}`;
+}
+
+function placeOrder() {
+    // Get form data
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const payment = document.querySelector('input[name="payment"]:checked').value;
+    
+    // Validate form
+    if (!fullName || !email || !phone || !address) {
+        alert('Please fill in all required fields!');
+        return;
+    }
+    
+    // Close checkout
+    closeCheckout();
+    
+    // Show confirmation
+    showConfirmation(fullName, email, phone, address, payment);
+    
+    // Clear cart after successful order
+    cart.items = [];
+    cart.save();
+    cart.updateUI();
+}
+
+function showConfirmation(fullName, email, phone, address, payment) {
+    const subtotal = cart.getTotal();
+    const deliveryFee = 5.00;
+    const total = subtotal + deliveryFee;
+    
+    const confirmationDetails = document.getElementById('confirmationDetails');
+    
+    confirmationDetails.innerHTML = `
+        <div class="confirmation-detail-item">
+            <span class="confirmation-detail-label">Order ID:</span>
+            <span class="confirmation-detail-value">#${generateOrderID()}</span>
+        </div>
+        <div class="confirmation-detail-item">
+            <span class="confirmation-detail-label">Name:</span>
+            <span class="confirmation-detail-value">${fullName}</span>
+        </div>
+        <div class="confirmation-detail-item">
+            <span class="confirmation-detail-label">Email:</span>
+            <span class="confirmation-detail-value">${email}</span>
+        </div>
+        <div class="confirmation-detail-item">
+            <span class="confirmation-detail-label">Phone:</span>
+            <span class="confirmation-detail-value">${phone}</span>
+        </div>
+        <div class="confirmation-detail-item">
+            <span class="confirmation-detail-label">Delivery Address:</span>
+            <span class="confirmation-detail-value">${address}</span>
+        </div>
+        <div class="confirmation-detail-item">
+            <span class="confirmation-detail-label">Payment Method:</span>
+            <span class="confirmation-detail-value">${payment === 'cod' ? 'Cash on Delivery' : 'Debit/Credit Card'}</span>
+        </div>
+        <div class="confirmation-detail-item" style="border-top: 2px solid var(--border); padding-top: 1rem; margin-top: 1rem;">
+            <span class="confirmation-detail-label" style="font-size: 1.1rem; font-weight: bold;">Order Total:</span>
+            <span class="confirmation-detail-value" style="font-size: 1.1rem; color: var(--primary);">AED ${total.toFixed(2)}</span>
+        </div>
+    `;
+    
+    const confirmationScreen = document.getElementById('confirmationScreen');
+    if (confirmationScreen) {
+        confirmationScreen.classList.add('open');
+    }
+}
+
+function generateOrderID() {
+    return Math.floor(Math.random() * 1000000);
+}
+
+function closeConfirmation() {
+    const confirmationScreen = document.getElementById('confirmationScreen');
+    if (confirmationScreen) {
+        confirmationScreen.classList.remove('open');
+    }
+    
+    // Refresh page
+    location.reload();
+}
+
 // Intersection Observer for scroll animations
 function observeElements() {
     const observer = new IntersectionObserver((entries) => {
