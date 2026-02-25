@@ -106,30 +106,76 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <img src="logo.svg" alt="PM Modern Logo" class="footer-logo">
-                    <h3>PMMODERN</h3>
-                    <p>Premium groceries delivered fresh across UAE.</p>
+                <!-- Brand Section -->
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo-container">
+                        <img src="logo.svg" alt="PM Modern Logo" class="footer-logo">
+                    </div>
+                    <h3>PM MODERN</h3>
+                    <p>Premium groceries delivered fresh to your doorstep across UAE.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-icon">f</a>
+                        <a href="#" aria-label="Instagram" class="social-icon">📷</a>
+                        <a href="#" aria-label="Twitter" class="social-icon">𝕏</a>
+                        <a href="#" aria-label="WhatsApp" class="social-icon">💬</a>
+                    </div>
                 </div>
-                <div>
-                    <h4>Company</h4>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">🏠 Home</a></li>
+                        <li><a href="#">📦 Shop</a></li>
+                        <li><a href="#">❓ About Us</a></li>
+                        <li><a href="#">💼 Careers</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4>Support</h4>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4>Customer Support</h4>
                     <ul>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">🚚 Shipping Info</a></li>
+                        <li><a href="#">↩️ Returns & Exchange</a></li>
+                        <li><a href="#">❓ FAQ</a></li>
+                        <li><a href="#">🛡️ Privacy Policy</a></li>
                     </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p><strong>PM MODERN GENERAL TRADING FZ-LLC</strong></p>
+                        <p><small>FOB50736</small></p>
+                        <p>📍 Compass Building, Al Shohada Road<br><small>Al Hamra Industrial Zone-FZ, UAE</small></p>
+                        <p>📧 <a href="mailto:info@pmmodern.ae">info@pmmodern.ae</a></p>
+                        <p>📞 <a href="tel:+971123456789">+971 (0) XXX-XXXX</a></p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <h4>Subscribe to Our Newsletter</h4>
+                <p>Get the latest offers and grocery tips delivered to your inbox</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; 2024 PM Modern. All rights reserved.</p>
+                <p>&copy; 2024 PM Modern General Trading FZ-LLC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Terms & Conditions</a>
+                    <span>•</span>
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
